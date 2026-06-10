@@ -6,8 +6,8 @@
 }
 
 body {
-  background: #fff;
-  color: #000;
+  background: #000;
+  color: #fff;
   overflow-x: hidden;
 }
 
@@ -16,17 +16,24 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 20px 60px;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #333;
   position: sticky;
   top: 0;
-  background: #fff;
+  background: #000;
+  z-index: 1000;
 }
 
 nav a {
   margin-left: 20px;
   text-decoration: none;
-  color: #000;
+  color: #fff;
   font-size: 14px;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  opacity: 1;
 }
 
 /* HERO */
@@ -45,29 +52,27 @@ nav a {
 .hero p {
   margin-top: 20px;
   max-width: 500px;
+  opacity: 0.8;
 }
 
 .btn {
   margin-top: 20px;
   padding: 12px 24px;
-  border: 1px solid #000;
+  border: 1px solid #fff;
   background: transparent;
+  color: #fff;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .btn:hover {
-  background: #000;
-  color: #fff;
+  background: #fff;
+  color: #000;
 }
 
 /* SECTIONS */
 .section {
   padding: 100px 60px;
-}
-
-.dark {
-  background: #000;
-  color: #fff;
 }
 
 /* GRID */
@@ -79,17 +84,23 @@ nav a {
 
 /* CARDS */
 .card {
-  border: 1px solid #000;
+  border: 1px solid #333;
   padding: 20px;
   transition: 0.3s;
+  background: #000;
 }
 
 .card:hover {
   transform: translateY(-5px);
+  border-color: #fff;
 }
 
-.dark .card {
-  border: 1px solid #fff;
+.card h3 {
+  color: #fff;
+}
+
+.card p {
+  color: #aaa;
 }
 
 /* ACCESS */
@@ -101,33 +112,24 @@ input {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
+  background: #000;
+  border: 1px solid #333;
+  color: #fff;
 }
 
 /* FOOTER */
 .footer {
   padding: 40px;
   text-align: center;
-  border-top: 1px solid #000;
+  border-top: 1px solid #333;
+  color: #aaa;
 }
 
-/* ANIMATIONS */
-.fade {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1s forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* ANIMATION */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
-  transition: 0.6s;
+  transition: 0.6s ease;
 }
 
 .reveal.active {
