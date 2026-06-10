@@ -1,24 +1,14 @@
-function checkAccess() {
-  const input = document.querySelector("input").value;
+function show(id) {
+  const sections = document.querySelectorAll(".section");
 
-  if (input === "ZENTRIX") {
-    alert("ACCESS GRANTED");
-  } else {
-    alert("ACCESS DENIED");
+  for (let i = 0; i < sections.length; i++) {
+    sections[i].classList.remove("active");
   }
+
+  document.getElementById(id).classList.add("active");
 }
 
-/* FIXED SCROLL REVEAL SYSTEM */
-const sections = document.querySelectorAll(".reveal");
-
-function revealOnScroll() {
-  sections.forEach(sec => {
-    const top = sec.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      sec.classList.add("active");
-    }
-  });
-}
-
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
+/* optional startup state */
+window.onload = function () {
+  show("home");
+};
