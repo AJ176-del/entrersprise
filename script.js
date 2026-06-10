@@ -1,28 +1,21 @@
-const heroImages = [
+function checkAccess() {
+  const input = document.querySelector("input").value;
 
-"images/hero1.jpg",
-"images/hero2.jpg",
-"images/hero3.jpg",
-"images/hero4.jpg",
-"images/hero5.jpg"
-
-];
-
-let current = 0;
-
-const hero = document.querySelector(".hero");
-
-setInterval(()=>{
-
-current++;
-
-if(current >= heroImages.length){
-
-current = 0;
-
+  if (input === "ZENTRIX") {
+    alert("ACCESS GRANTED");
+  } else {
+    alert("ACCESS DENIED");
+  }
 }
 
-hero.style.backgroundImage =
-`url(${heroImages[current]})`;
+/* SCROLL REVEAL */
+const sections = document.querySelectorAll(".reveal");
 
-},4000);
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      sec.classList.add("active");
+    }
+  });
+});
