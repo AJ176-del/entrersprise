@@ -5,31 +5,34 @@
   font-family: Arial, sans-serif;
 }
 
-body {
+html, body {
+  width: 100%;
+  height: 100%;
   background: #000;
   color: #fff;
-  overflow-x: hidden;
 }
 
-/* TOPBAR */
+/* FORCE ALL ELEMENTS TO INHERIT BLACK THEME */
+body, section, header, footer, div {
+  background-color: #000;
+  color: #fff;
+}
+
+/* TOP BAR */
 .topbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 20px 60px;
-  border-bottom: 1px solid #333;
-  position: sticky;
-  top: 0;
+  border-bottom: 1px solid #222;
   background: #000;
-  z-index: 1000;
 }
 
 nav a {
-  margin-left: 20px;
-  text-decoration: none;
   color: #fff;
-  font-size: 14px;
-  opacity: 0.8;
-  transition: 0.3s;
+  text-decoration: none;
+  margin-left: 20px;
+  opacity: 0.7;
 }
 
 nav a:hover {
@@ -38,10 +41,11 @@ nav a:hover {
 
 /* HERO */
 .hero {
-  height: 90vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   padding: 60px;
+  background: #000;
 }
 
 .hero h1 {
@@ -51,21 +55,21 @@ nav a:hover {
 
 .hero p {
   margin-top: 20px;
-  max-width: 500px;
-  opacity: 0.8;
+  max-width: 600px;
+  color: #ccc;
 }
 
-.btn {
+/* BUTTON */
+button {
   margin-top: 20px;
   padding: 12px 24px;
+  background: #000;
   border: 1px solid #fff;
-  background: transparent;
   color: #fff;
   cursor: pointer;
-  transition: 0.3s;
 }
 
-.btn:hover {
+button:hover {
   background: #fff;
   color: #000;
 }
@@ -73,6 +77,7 @@ nav a:hover {
 /* SECTIONS */
 .section {
   padding: 100px 60px;
+  background: #000;
 }
 
 /* GRID */
@@ -80,19 +85,15 @@ nav a:hover {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  background: #000;
 }
 
 /* CARDS */
 .card {
-  border: 1px solid #333;
   padding: 20px;
-  transition: 0.3s;
+  border: 1px solid #333;
   background: #000;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  border-color: #fff;
+  color: #fff;
 }
 
 .card h3 {
@@ -103,36 +104,20 @@ nav a:hover {
   color: #aaa;
 }
 
-/* ACCESS */
-.access-box {
-  max-width: 400px;
-}
-
+/* INPUT */
 input {
   width: 100%;
   padding: 10px;
-  margin-bottom: 10px;
   background: #000;
   border: 1px solid #333;
   color: #fff;
 }
 
 /* FOOTER */
-.footer {
+footer {
   padding: 40px;
   text-align: center;
-  border-top: 1px solid #333;
+  border-top: 1px solid #222;
+  background: #000;
   color: #aaa;
-}
-
-/* ANIMATION */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 0.6s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
 }
